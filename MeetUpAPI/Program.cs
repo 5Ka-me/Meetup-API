@@ -1,6 +1,5 @@
 using DI;
 using MeetUpAPI.Middleware;
-using MeetUpAPI.Profiles;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,10 +8,9 @@ builder.Host.UseSerilog((context, services, configuration) => configuration
     .ReadFrom.Configuration(context.Configuration)
     .ReadFrom.Services(services));
 
-builder.Services.AddContext(builder.Configuration.GetConnectionString("DefaultConnection"));
-builder.Services.AddRepositories();
+builder.Services.AddApplications(builder.Configuration);
+builder.Services.AddBusiness();
 
-builder.Services.AddAutoMapper(typeof(EventProfile));
 
 builder.Services.AddControllers();
 

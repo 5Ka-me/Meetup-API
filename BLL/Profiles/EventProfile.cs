@@ -2,7 +2,7 @@
 using BLL.Models;
 using DAL.Entities;
 
-namespace MeetUpAPI.Profiles
+namespace BLL.Profiles
 {
     public class EventProfile : Profile
     {
