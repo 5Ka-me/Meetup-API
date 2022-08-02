@@ -1,7 +1,8 @@
-﻿using System.Net;
+﻿using MeetUpAPI.Models;
+using System.Net;
 using System.Text.Json;
 
-namespace API.Models
+namespace MeetUpAPI.Middleware
 {
     public class CustomExceptionHandler
     {

@@ -1,4 +1,4 @@
-﻿namespace API.Models
+﻿namespace MeetUpAPI.Models
 {
     public class ExceptionModel
     {

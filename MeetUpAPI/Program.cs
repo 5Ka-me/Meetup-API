@@ -1,14 +1,6 @@
-using API.Models;
-using BLL.Interfaces;
-using BLL.Models;
-using BLL.Services;
-using BLL.Validators;
-using DAL;
-using DAL.Interfaces;
-using DAL.Repositories;
-using FluentValidation;
+using DI;
+using MeetUpAPI.Middleware;
 using MeetUpAPI.Profiles;
-using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,12 +9,8 @@ builder.Host.UseSerilog((context, services, configuration) => configuration
     .ReadFrom.Configuration(context.Configuration)
     .ReadFrom.Services(services));
 
-string connection = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<EventContext>(options => options.UseSqlServer(connection));
-
-builder.Services.AddScoped<IEventService, EventService>();
-builder.Services.AddScoped<IEventRepository, EventRepository>();
-builder.Services.AddScoped<IValidator<EventModel>, EventValidator>();
+builder.Services.AddContext(builder.Configuration.GetConnectionString("DefaultConnection"));
+builder.Services.AddRepositories();
 
 builder.Services.AddAutoMapper(typeof(EventProfile));
 
