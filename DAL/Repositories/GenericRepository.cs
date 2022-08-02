@@ -19,7 +19,7 @@ namespace DAL.Repositories
             return await _dbSet.AsNoTracking().ToListAsync(cancellationToken);
         }
 
-        public async Task<T> GetById(int id, CancellationToken cancellationToken)
+        public async Task<T?> GetById(int id, CancellationToken cancellationToken)
         {
             return await _dbSet.FindAsync(new object[] { id }, cancellationToken);
         }

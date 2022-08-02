@@ -2,7 +2,7 @@
 {
     public class EventModel
     {
-        public int Id { get; set; } 
+        public int Id { get; set; }
         public string Theme { get; set; } = null!;
         public string Description { get; set; } = null!;
         public string Organizer { get; set; } = null!;

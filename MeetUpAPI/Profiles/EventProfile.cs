@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using BLL.Models;
 using DAL.Entities;
-using MeetUpAPI.ViewModels;
 
 namespace MeetUpAPI.Profiles
 {
@@ -9,7 +8,6 @@ namespace MeetUpAPI.Profiles
     {
         public EventProfile()
         {
-            CreateMap<EventViewModel, EventModel>().ReverseMap();
             CreateMap<Event, EventModel>().ReverseMap();
         }
     }
