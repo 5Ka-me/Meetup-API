@@ -21,7 +21,7 @@ namespace MeetUpAPI.Controllers
             return Ok(await _eventService.Get(cancellationToken));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> Get(int id, CancellationToken cancellationToken)
         {
             return Ok(await _eventService.Get(id, cancellationToken));
@@ -39,7 +39,7 @@ namespace MeetUpAPI.Controllers
             return Ok(await _eventService.Update(eventModel, cancellationToken));
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task Delete(int id, CancellationToken cancellationToken)
         {
             await _eventService.Delete(id, cancellationToken);
