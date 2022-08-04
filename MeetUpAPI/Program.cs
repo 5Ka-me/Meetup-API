@@ -11,7 +11,6 @@ builder.Host.UseSerilog((context, services, configuration) => configuration
 builder.Services.AddApplications(builder.Configuration);
 builder.Services.AddBusiness();
 
-
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();

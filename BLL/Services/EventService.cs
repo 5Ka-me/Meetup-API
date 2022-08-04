@@ -29,6 +29,7 @@ namespace BLL.Services
             CheckNullEvent(@event);
 
             var eventTemp = await _eventRepository.GetByTheme(eventModel.Theme, cancellationToken);
+
             if (eventTemp != null && eventTemp.Id != eventModel.Id)
             {
                 throw new ArgumentException("A event with the same theme already exists", nameof(eventModel));
