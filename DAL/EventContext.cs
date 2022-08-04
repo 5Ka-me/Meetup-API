@@ -7,7 +7,9 @@ namespace DAL
     {
         public EventContext(DbContextOptions<EventContext> options)
             : base(options)
-        { }
+        {
+            Database.EnsureCreated();
+        }
 
         public DbSet<Event> Events { get; set; }
 

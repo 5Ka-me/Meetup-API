@@ -7,6 +7,7 @@ namespace MeetUpAPI.Middleware
     public class CustomExceptionHandler
     {
         private readonly RequestDelegate _next;
+
         public CustomExceptionHandler(RequestDelegate next)
         {
             _next = next;
